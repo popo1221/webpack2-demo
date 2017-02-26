@@ -8,6 +8,7 @@ import extractCss from './webpack/extractCss'
 import lintJavascript from './webpack/lintJavascript'
 import loadAsset from './webpack/loadAsset'
 import path from 'path'
+import testJavascript from './webpack/testJavascript'
 import webpack from 'webpack'
 import merge from 'webpack-merge'
 
@@ -16,8 +17,9 @@ export default function webpackConfig(env) {
         commonConfig(env.production),
         lintJavascript,
         compileJavascript,
+        testJavascript,
         extractCss,
         loadAsset,
-        compressJavascript
+        compressJavascript,
     )
 }

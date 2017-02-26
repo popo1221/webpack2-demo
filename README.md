@@ -11,3 +11,7 @@
 - compile css => style-loader, css-loader, postcss-loader
 - code split => CommonChunksPlugin
 
+- javascript unit test => mocha-loader
+- javascript cover => coverjs-loader
+
+

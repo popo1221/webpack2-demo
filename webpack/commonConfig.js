@@ -17,7 +17,7 @@ export default function commonConfig(production) {
 	}
 	const devtool = production 
 						? 'cheap-module-eval-source-map' 
-						: 'source-map'
+						: 'eval-source-map'
 	const output = {
 		path: 'build',
 		filename: '[name].min.js'

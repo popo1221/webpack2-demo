@@ -2,7 +2,9 @@ import context from '../context'
 import glob from 'glob'
 import path from 'path'
 
-export default listEntries('./modules/**/index.js', context)
+export default {
+    'test.bundle': listEntries('./**/*.spec.js', context)
+}
 
 function listEntries(pattern, basedir) {
     return glob
@@ -11,8 +13,7 @@ function listEntries(pattern, basedir) {
             // const split = next.split('/')
             // const [,, cat, name] = split
             // const key = `modules/${cat}/${name}`
-            const key = next.replace(/\.js$/, '')
-            prev[key] = next
+            prev.push(next)
             return prev
-        }, {})
+        }, [])
 }
